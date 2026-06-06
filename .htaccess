@@ -1,5 +1,0 @@
-Options -Indexes
-DirectoryIndex index.php
-<FilesMatch "\.(json)$">
-  Require all denied
-</FilesMatch>

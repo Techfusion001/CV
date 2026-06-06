@@ -1,1 +1,0 @@
-<?php require 'blog.php'; ?>
