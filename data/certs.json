@@ -1,0 +1,50 @@
+[
+  {
+    "title": "SIA Door Supervisor License",
+    "issuer": "UK Security Training",
+    "summary": "Door supervisor training covering first aid, access control, conflict management, venue safety and public-facing security readiness.",
+    "icon": "Shield",
+    "image": "assets/svg/cert-security.svg",
+    "completion_date": "Completed"
+  },
+  {
+    "title": "Certified Ethical Hacker \u2014 CEH",
+    "issuer": "EC-Council",
+    "summary": "Ethical hacking methodology, reconnaissance, vulnerability concepts, tools and defensive awareness.",
+    "icon": "Terminal",
+    "image": "assets/svg/cert-tech.svg",
+    "completion_date": "2023"
+  },
+  {
+    "title": "CompTIA Security+ SY0-601",
+    "issuer": "CompTIA",
+    "summary": "Risk management, threats, incident response, architecture, cryptography and security operations.",
+    "icon": "Lock",
+    "image": "assets/svg/cert-academic.svg",
+    "completion_date": "Completed"
+  },
+  {
+    "title": "Cyber Security: Understand Threats and Prevent Attacks",
+    "issuer": "Online Certification",
+    "summary": "Foundational security learning focused on common threats, prevention strategies and secure digital behaviour.",
+    "icon": "Alert",
+    "image": "assets/svg/cert-security.svg",
+    "completion_date": "Completed"
+  },
+  {
+    "title": "Introduction to CISM",
+    "issuer": "Security Governance",
+    "summary": "Security governance, risk, information security programs and incident management principles.",
+    "icon": "Graph",
+    "image": "assets/svg/cert-tech.svg",
+    "completion_date": "Completed"
+  },
+  {
+    "title": "Ulster MSc Coursework Portfolio",
+    "issuer": "Ulster University",
+    "summary": "Academic evidence across AI, big data, cloud infrastructure, digital transformation and cybersecurity ontology research.",
+    "icon": "Academic",
+    "image": "assets/svg/cert-academic.svg",
+    "completion_date": "2026"
+  }
+]

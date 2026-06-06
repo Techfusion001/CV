@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | Portfolio</title><link rel="stylesheet" href="../assets/css/style.css"></head>
+<body class="admin-body">
+<div class="admin-shell">
+  <aside class="admin-sidebar"><div class="admin-brand-card"><p class="admin-kicker">Portfolio CMS</p><h2>Muhammad Haider Abbas</h2><span>GitHub + Supabase Admin</span></div><nav class="admin-nav"><a href="../index.html">View Site</a><a href="#" id="logoutBtn">Logout</a></nav></aside>
+  <section class="admin-main"><div class="admin-topbar"><div><p class="admin-kicker">Control Panel</p><h1>Supabase Administration</h1></div></div>
+    <section id="loginPanel" class="admin-form"><h2>Login</h2><p>Use your Supabase Auth admin email and password.</p><div class="admin-group"><label>Email<input id="loginEmail" type="email"></label><label>Password<input id="loginPassword" type="password"></label></div><button id="loginBtn" class="btn primary">Login</button><div id="loginStatus"></div></section>
+    <section id="adminPanel" style="display:none"><section class="admin-hero-panel animated-admin-hero"><div><p class="admin-kicker">Database CMS</p><h2>Manage portfolio tables from Supabase.</h2><p>This lightweight admin can add, edit and delete portfolio records. Images/videos should be uploaded to Supabase Storage, then paste the public URL/path into the image fields.</p></div><div class="admin-hero-graphic admin-orbit-graphic"><span></span><span></span><span></span><i></i></div></section><div id="adminTabs" class="filters"></div><div id="adminContent"></div></section>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/supabase-admin.js"></script>
+</body></html>
