@@ -742,3 +742,165 @@ body.admin-body {
 .skill-card .portfolio-icon-visual{
   flex:0 0 76px;
 }
+
+/* v8 admin live media preview + WordPress-like icon picker */
+.admin-body .admin-media-field{
+  display:grid;
+  gap:14px;
+  padding:18px;
+  border:1px solid #dbeafe;
+  border-radius:22px;
+  background:linear-gradient(135deg,#ffffff,#f8fbff);
+  box-shadow:0 10px 28px rgba(6,26,64,.05);
+}
+.admin-body .media-field-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.admin-body .media-field-head strong{display:block;color:#061a40;font-size:17px}
+.admin-body .media-field-head p,.admin-body .admin-icon-picker p{margin:4px 0 0;color:#64748b;font-size:13px;line-height:1.45}
+.admin-body .media-url-label{display:grid;gap:8px;color:#061a40;font-weight:700}
+.admin-body .admin-preview-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.admin-body .admin-preview-duo article{display:grid;gap:8px;min-width:0}
+.admin-body .admin-preview-duo article>span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0b5cff;font-weight:800}
+.admin-body .admin-media-preview{
+  min-height:180px;
+  border:1px dashed #93c5fd;
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#f8fbff;
+  color:#64748b;
+  text-align:center;
+  padding:12px;
+}
+.admin-body .admin-media-preview img,.admin-body .admin-media-preview video{
+  width:100%;
+  max-height:240px;
+  object-fit:contain;
+  border-radius:14px;
+  background:#fff;
+}
+.admin-body .admin-media-preview small,.admin-body .admin-mini-preview small{
+  display:block;
+  width:100%;
+  margin-top:8px;
+  color:#64748b;
+  font-size:11px;
+  overflow-wrap:anywhere;
+}
+.admin-body .admin-media-preview.broken::after,.admin-body .admin-mini-preview.broken::after{
+  content:'Preview not available — check this path/URL';
+  display:block;
+  color:#b91c1c;
+  font-weight:700;
+  padding:8px;
+}
+.admin-body .icon-live-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#0b5cff}
+.admin-body .icon-live-preview i{font-size:58px;line-height:1}
+.admin-body .admin-upload-label{border:1px solid #dbeafe;padding:12px;border-radius:14px;background:#fff;color:#061a40;font-weight:700}
+.admin-body .admin-icon-picker{border-radius:18px;background:#fff;border:1px solid #dbeafe;padding:14px}
+.admin-body .icon-picker-top{display:grid;grid-template-columns:1fr minmax(220px,360px);gap:12px;align-items:start;margin-bottom:12px}
+.admin-body .icon-picker-top strong{color:#061a40}
+.admin-body .icon-search{border:1px solid #dbeafe;border-radius:12px;padding:10px 12px;font:inherit}
+.admin-body .icon-choice-grid,.admin-body .svg-choice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:9px}
+.admin-body .icon-choice,.admin-body .svg-choice{
+  border:1px solid #dbeafe;
+  border-radius:14px;
+  background:#f8fbff;
+  color:#061a40;
+  padding:10px 8px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  transition:.2s ease;
+  min-height:82px;
+}
+.admin-body .icon-choice:hover,.admin-body .svg-choice:hover,.admin-body .icon-choice.selected,.admin-body .svg-choice.selected{transform:translateY(-2px);border-color:#0b5cff;background:#eef5ff;box-shadow:0 8px 20px rgba(11,92,255,.12)}
+.admin-body .icon-choice i{font-size:26px;color:#0b5cff}
+.admin-body .icon-choice span,.admin-body .svg-choice span{font-size:11px;color:#475569;word-break:break-word;text-align:center;line-height:1.2}
+.admin-body .svg-choice img{height:38px;width:60px;object-fit:contain}
+.admin-body .admin-icon-picker details{margin-top:12px}
+.admin-body .admin-icon-picker summary{cursor:pointer;color:#061a40;font-weight:800;margin-bottom:10px}
+.admin-body .admin-mini-preview{width:92px;min-height:70px;border:1px solid #dbeafe;border-radius:14px;background:#f8fbff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;text-align:center;overflow:hidden}
+.admin-body .admin-mini-preview img{width:100%;height:54px;object-fit:contain;border-radius:8px}
+.admin-body .admin-mini-preview .icon-live-preview i{font-size:28px}
+.admin-body .admin-mini-preview .icon-live-preview small{display:none}
+.admin-body .empty-media{font-size:13px;color:#64748b}
+@media(max-width:800px){.admin-body .admin-preview-duo,.admin-body .icon-picker-top{grid-template-columns:1fr}}
+
+
+/* v9: skills section rebuilt like classic 3-column dark skills layout; icon picker removed */
+.admin-icon-picker{display:none!important;}
+.dark-skills-section{
+  background:#333;
+  color:#f8fafc;
+  padding-top:70px;
+  padding-bottom:72px;
+}
+.skill-showcase-head{
+  text-align:center;
+  margin-bottom:44px;
+}
+.skill-showcase-head h2{
+  color:#fff;
+  font-size:38px;
+  line-height:1;
+  margin:0 0 16px;
+  font-weight:800;
+}
+.skill-showcase-head span{
+  display:block;
+  width:100px;
+  height:5px;
+  border-radius:20px;
+  margin:0 auto;
+  background:#32d486;
+}
+.skills-showcase-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:58px 70px;
+  max-width:1220px;
+  margin:0 auto;
+}
+.skill-showcase-card{
+  text-align:center;
+  color:#e9eef6;
+}
+.skill-showcase-card .skill-showcase-image{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  object-fit:contain;
+  padding:14px;
+  background:linear-gradient(90deg,#d6d6d6 0 50%,#fff 50% 100%);
+  box-shadow:0 10px 25px rgba(0,0,0,.16);
+  margin:0 auto 18px;
+  display:block;
+}
+.skill-showcase-card h3{
+  color:#fff;
+  margin:0 0 16px;
+  font-size:25px;
+  line-height:1.1;
+  font-weight:800;
+}
+.skill-showcase-card p{
+  color:#eef2f7;
+  font-size:19px;
+  line-height:1.35;
+  margin:0 auto;
+  max-width:360px;
+}
+.admin-media-preview img,.admin-mini-preview img{
+  max-width:100%;
+  object-fit:contain;
+}
+.admin-mini-preview{
+  min-width:86px;
+}
+@media(max-width:992px){.skills-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:46px 36px}.skill-showcase-card p{font-size:17px}}
+@media(max-width:620px){.skills-showcase-grid{grid-template-columns:1fr}.skill-showcase-head h2{font-size:32px}.skill-showcase-card p{font-size:16px}}
