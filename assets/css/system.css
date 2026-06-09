@@ -730,3 +730,107 @@ html, body, body.page{
   .traffic-center-card strong{font-size:30px;}
   .traffic-node:after{left:auto;right:20px;min-width:190px;}
 }
+
+
+/* 2026-06 public QA fixes: mobile case-study layout, 16:9 media, faster perceived page load. */
+img{max-width:100%;height:auto;}
+.hp-card > img,
+.hp-thumb,
+.hp-detail-hero img,
+.hp-cinematic-frame img,
+.blog-card .post-image img,
+.portfolio-grid figure img,
+.portfolio-grid .portfolio-item-img img,
+.portfolio-item-img img,
+.post-content .single-image img,
+.portfolio-page-image img,
+.portfolio-page-carousel img,
+.ajax-page-content .single-image img{
+  aspect-ratio:16/9!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  display:block!important;
+}
+.home-photo .hp-inner,
+.home-photo img,
+.logo-symbol,
+.logo-text img,
+.hp-skill-orb img,
+.admin-logo,
+.admin-row-img,
+.image-preview,
+.media-library img,
+img[src*="skill-"],
+img[src*="cert-"],
+img[src*="hero-avatar"],
+img[src*="about-portrait"]{
+  aspect-ratio:auto!important;
+}
+.hp-detail-hero,
+.hp-cinematic-frame{
+  width:100%!important;
+  aspect-ratio:16/9!important;
+}
+.hp-project-layout{
+  grid-template-columns:minmax(0,4fr) minmax(260px,1fr)!important;
+}
+.hp-project-main,
+.hp-project-sidebar,
+.hp-side-panel,
+.hp-case-block,
+.hp-rich-content,
+.hp-lead-text{
+  min-width:0!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+}
+.hp-project-main h1,
+.hp-project-main h2,
+.hp-project-main h3{
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+.preloader{pointer-events:none;}
+@media(max-width:992px){
+  .hp-project-layout{
+    display:block!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    width:100%!important;
+  }
+  .hp-project-main{
+    width:100%!important;
+    max-width:100%!important;
+    padding-right:0!important;
+    border-right:0!important;
+  }
+  .hp-project-sidebar{
+    width:100%!important;
+    max-width:100%!important;
+    margin-top:26px!important;
+  }
+  .hp-side-panel{
+    position:relative!important;
+    top:auto!important;
+    transform:none!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+  }
+}
+@media(max-width:620px){
+  .single-page-content .content-area .page-content,
+  .page-content{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .page-title h1{font-size:30px!important;line-height:1.2!important;}
+  .hp-project-main h2{font-size:24px!important;line-height:1.25!important;}
+  .hp-case-block{padding:18px!important;}
+  .hp-side-row{align-items:flex-start!important;}
+  .hp-side-row strong{max-width:58%!important;}
+}

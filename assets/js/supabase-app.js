@@ -3,6 +3,7 @@
   const hasSupabase=!!(cfg.url&&cfg.anonKey&&window.supabase&&!String(cfg.url).includes('YOUR_'));
   const client=hasSupabase?window.supabase.createClient(cfg.url,cfg.anonKey):null;
   const fallbackCache={};
+  const liveCache={};
   const tables=['projects','blogs','certs','skills','experience','education','design_skills','coding_skills','categories','settings','messages'];
   const slugTables=new Set(['projects','blogs','certs','experience','education','categories']);
   const imageFields=new Set(['image','hero_image','about_image','page_hero_media','cta_media','home_about_image']);
@@ -24,22 +25,27 @@
     catch(e){ fallbackCache[table]=table==='settings'?{}:[]; return fallbackCache[table]; }
   }
   async function get(table){
-    if(client){
-      let q=client.from(table).select('*');
-      if(['projects','blogs','certs','skills','experience','education','design_skills','coding_skills','categories'].includes(table)) q=q.order('created_at',{ascending:false});
-      const {data,error}=await q;
-      if(!error&&data){
-        if(table==='settings') return data[0]||await fallback(table);
-        if(Array.isArray(data)&&data.length) return data;
-        if(['projects','blogs','certs','skills','experience','education','design_skills','coding_skills','categories'].includes(table)) return await fallback(table);
-        return data;
+    if(liveCache[table]) return liveCache[table];
+    liveCache[table]=(async()=>{
+      if(client){
+        let q=client.from(table).select('*');
+        if(['projects','blogs','certs','skills','experience','education','design_skills','coding_skills','categories'].includes(table)) q=q.order('created_at',{ascending:false});
+        const {data,error}=await q;
+        if(!error&&data){
+          if(table==='settings') return data[0]||await fallback(table);
+          if(Array.isArray(data)&&data.length) return data;
+          if(['projects','blogs','certs','skills','experience','education','design_skills','coding_skills','categories'].includes(table)) return await fallback(table);
+          return data;
+        }
+        console.warn('Supabase fallback for',table,error); if(isMissingTable(error)){ console.warn(missingTableMessage(table)); }
       }
-      console.warn('Supabase fallback for',table,error); if(isMissingTable(error)){ console.warn(missingTableMessage(table)); }
-    }
-    return fallback(table);
+      return fallback(table);
+    })();
+    return liveCache[table];
   }
+  function clearCache(table){ delete liveCache[table]; }
   async function insert(table,row){
-    row={...row};
+    row={...row}; clearCache(table);
     if(slugTables.has(table)) row.slug=row.slug||slugify(row.title||row.name||Date.now());
     if(table==='projects'&&typeof row.tags==='string') row.tags=normalizeArray(row.tags);
     if(client){ const {data,error}=await client.from(table).insert(row).select().single(); if(error){ if(isMissingTable(error)) throw new Error(missingTableMessage(table)); throw error; } return data; }
@@ -47,12 +53,13 @@
     const arr=await fallback(table); row.id=row.id||('local-'+Date.now()); arr.unshift(row); fallbackCache[table]=arr; localStorage.setItem('portfolio_'+table,JSON.stringify(arr)); return row;
   }
   async function update(table,id,row){
-    row={...row}; if(!slugTables.has(table)) delete row.slug; if(table==='projects'&&typeof row.tags==='string') row.tags=normalizeArray(row.tags);
+    row={...row}; clearCache(table); if(!slugTables.has(table)) delete row.slug; if(table==='projects'&&typeof row.tags==='string') row.tags=normalizeArray(row.tags);
     if(client){ const {data,error}=await client.from(table).update(row).eq('id',id).select().single(); if(error){ if(isMissingTable(error)) throw new Error(missingTableMessage(table)); throw error; } return data; }
     if(table==='settings'){ const existing=await fallback(table); const next={...(Array.isArray(existing)?existing[0]:existing),...row,id:(Array.isArray(existing)?existing[0]?.id:existing?.id)||'local-settings'}; fallbackCache[table]=next; localStorage.setItem('portfolio_'+table,JSON.stringify(next)); return next; }
     const arr=await fallback(table); const i=arr.findIndex(x=>String(x.id||x.slug||x.title)===String(id)); if(i>-1) arr[i]={...arr[i],...row}; fallbackCache[table]=arr; localStorage.setItem('portfolio_'+table,JSON.stringify(arr)); return arr[i];
   }
   async function remove(table,id){
+    clearCache(table);
     if(client){ const {error}=await client.from(table).delete().eq('id',id); if(error) throw error; return true; }
     const arr=await fallback(table); const next=arr.filter(x=>String(x.id||x.slug||x.title)!==String(id)); fallbackCache[table]=next; localStorage.setItem('portfolio_'+table,JSON.stringify(next)); return true;
   }
@@ -76,8 +83,9 @@
   function footerHtml(){return `<footer class="hp-footer"><div class="hp-footer-inner hp-footer-clean"><div><strong>Haider Abbas</strong><p>Game Developer • 2D/3D Animator • VFX Artist • Web & AI Systems Builder</p></div><div class="hp-footer-copy">© 2026 All rights reserved. TechFusion.</div></div></footer>`}
   function ensureFooter(){ if(document.querySelector('.admin-shell')||location.pathname.includes('/admin/'))return; if(document.querySelector('.hp-footer'))return; const main=document.querySelector('#page_container')||document.body; main.insertAdjacentHTML('beforeend',footerHtml()); }
   async function renderHome(){
-    const s=await get('settings'), projects=(await get('projects')).slice(0,3), skills=(await get('skills')).slice(0,6), blogs=(await get('blogs')).slice(0,3);
     const hero=document.querySelector('[data-home-hero]'); if(!hero) return;
+    const [s,allProjects,allSkills,allBlogs]=await Promise.all([get('settings'),get('projects'),get('skills'),get('blogs')]);
+    const projects=(allProjects||[]).slice(0,3), skills=(allSkills||[]).slice(0,6), blogs=(allBlogs||[]).slice(0,3);
     const role=s.hero_role||'Game Developer • 2D/3D Animator • VFX Artist • Web & AI Systems Builder';
     hero.innerHTML=`<div class="row flex-v-align"><div class="col-sm-12 col-md-5 col-lg-5"><div class="home-photo"><div class="hp-inner" style="background-image:url(${image(s.hero_image||'img/Main_Image.png')})"></div></div></div><div class="col-sm-12 col-md-7 col-lg-7"><div class="home-text hp-left"><span class="hp-badge">${esc(s.hero_badge||'Portfolio System')}</span><h1>${esc(s.hero_name||'Muhammad Haider Abbas')}</h1><h4 class="hp-typing" data-text="${esc(role)}">${esc(role)}</h4><p>${esc(s.about_content||'A multidisciplinary creator building professional digital systems.')}</p><div class="hp-actions"><a class="hp-btn hp-btn-primary" href="portfolio.html">View Projects</a><a class="hp-btn" href="CV_File/MuhammadHaiderAbbasCV.pdf" download>Download General CV</a><a class="hp-btn" href="contact.html">Contact Me</a></div></div></div></div>`;
     const stats=document.querySelector('[data-home-stats]'); if(stats) stats.innerHTML=`<div class="hp-stat"><strong>${projects.length}+</strong><span>Featured Projects</span></div><div class="hp-stat"><strong>${skills.length}+</strong><span>Core Skill Areas</span></div><div class="hp-stat"><strong>3+</strong><span>Years Experience</span></div><div class="hp-stat"><strong>UK</strong><span>Based Portfolio</span></div>`;
@@ -91,8 +99,8 @@
     return `<div class="hp-skills-grid-six">${items.map(x=>skillIconCard(x,'hp-core-skill')).join('')}</div>`
   }
   function skillIconCard(x,extraClass=''){return `<div class="hp-skill-icon-card ${extraClass}"><div class="hp-skill-orb"><img src="${image(x.image)}" alt="${esc(x.title)}"></div><h3>${esc(x.title)}</h3><p>${rich(x.summary)}</p></div>`}
-  function cardProject(p){return `<div class="hp-card"><img src="${image(p.image)}" alt="${esc(p.title)}"><h3>${esc(p.title)}</h3><p class="hp-muted">${esc(p.category||'Project')} ${p.year?'• '+esc(p.year):''}</p><p>${esc(p.summary)}</p><div>${tags(p.tags)}</div><div class="hp-actions"><a class="hp-btn" href="project.html?slug=${esc(p.slug||slugify(p.title))}">View Case Study</a></div></div>`}
-  function cardBlog(b){return `<div class="hp-card"><img src="${image(b.image)}" alt="${esc(b.title)}"><p class="hp-date">${esc(b.category||'Blog')} • ${esc(b.date||'')}</p><h3>${esc(b.title)}</h3><p>${esc(b.summary)}</p><div class="hp-actions"><a class="hp-btn" href="blog.html?slug=${esc(b.slug||slugify(b.title))}">Read Blog</a></div></div>`}
+  function cardProject(p){return `<div class="hp-card"><img src="${image(p.image)}" alt="${esc(p.title)}" loading="lazy" decoding="async"><h3>${esc(p.title)}</h3><p class="hp-muted">${esc(p.category||'Project')} ${p.year?'• '+esc(p.year):''}</p><p>${esc(p.summary)}</p><div>${tags(p.tags)}</div><div class="hp-actions"><a class="hp-btn" href="project.html?slug=${esc(p.slug||slugify(p.title))}">View Case Study</a></div></div>`}
+  function cardBlog(b){return `<div class="hp-card"><img src="${image(b.image)}" alt="${esc(b.title)}" loading="lazy" decoding="async"><p class="hp-date">${esc(b.category||'Blog')} • ${esc(b.date||'')}</p><h3>${esc(b.title)}</h3><p>${esc(b.summary)}</p><div class="hp-actions"><a class="hp-btn" href="blog.html?slug=${esc(b.slug||slugify(b.title))}">Read Blog</a></div></div>`}
   async function renderPortfolio(){
     const el=document.querySelector('[data-projects]');
     if(!el) return;
@@ -121,15 +129,15 @@
     const fileDownload=p.download_url||'';
     const featureList=c&&Array.isArray(c.features)?`<div class="hp-case-block"><h3>Core Features</h3><ul>${c.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`:'';
     const contentHtml=c?`<div class="hp-case-stack"><div class="hp-case-block"><h3>Overview</h3><div class="hp-rich-content">${rich(c.overview||p.summary||'')}</div></div><div class="hp-case-block"><h3>Problem</h3><div class="hp-rich-content">${rich(c.problem||'')}</div></div><div class="hp-case-block"><h3>Solution</h3><div class="hp-rich-content">${rich(c.solution||'')}</div></div>${featureList}${c.outcome?`<div class="hp-case-block"><h3>Outcome</h3><div class="hp-rich-content">${rich(c.outcome)}</div></div>`:''}${c.future?`<div class="hp-case-block"><h3>Next Improvements</h3><div class="hp-rich-content">${rich(c.future)}</div></div>`:''}</div>`:`<div class="hp-case-block hp-rich-content">${rich(p.content||p.summary||'')}</div>`;
-    el.innerHTML=`<div class="hp-project-layout"><main class="hp-project-main"><div class="hp-detail-hero hp-cinematic-frame"><img src="${image(p.image)}" alt="${esc(p.title)}"></div><span class="hp-badge">${esc(p.category||'Project')}</span><h2>${esc(p.title)}</h2><p class="hp-muted">${esc(p.status||'')} ${p.year?'• '+esc(p.year):''} ${p.role?'• '+esc(p.role):''}</p><p class="hp-lead-text">${esc(p.summary)}</p><div>${tags(p.tags)}</div>${contentHtml}<div class="hp-section"><a class="hp-btn" href="portfolio.html">Back to Portfolio</a></div></main><aside class="hp-project-sidebar"><div class="hp-side-panel"><h3>Project Details</h3><div class="hp-side-row"><span>Year</span><strong>${esc(p.year||'Project')}</strong></div><div class="hp-side-row"><span>Category</span><strong>${esc(p.category||'Project')}</strong></div><div class="hp-side-row"><span>Role</span><strong>${esc(p.role||'Developer')}</strong></div><div class="hp-side-row"><span>Status</span><strong>${esc(p.status||'Completed')}</strong></div>${p.tools?`<div class="hp-side-row hp-tools"><span>Tools</span><strong>${esc(p.tools)}</strong></div>`:''}${live?`<a class="hp-btn hp-btn-fill hp-doc-btn" href="${esc(live)}" target="_blank" rel="noopener">Open Live Project</a>`:''}${source?`<a class="hp-btn hp-doc-btn" href="${esc(source)}" target="_blank" rel="noopener">View Source / GitHub</a>`:''}${doc?`<a class="hp-btn hp-btn-fill hp-doc-btn" href="${esc(doc)}" download>Download Documentation</a>`:''}${fileDownload&&fileDownload!==doc?`<a class="hp-btn hp-doc-btn" href="${esc(fileDownload)}" download>Download Project File</a>`:''}</div></aside></div>`;
+    el.innerHTML=`<div class="hp-project-layout"><main class="hp-project-main"><div class="hp-detail-hero hp-cinematic-frame"><img src="${image(p.image)}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div><span class="hp-badge">${esc(p.category||'Project')}</span><h2>${esc(p.title)}</h2><p class="hp-muted">${esc(p.status||'')} ${p.year?'• '+esc(p.year):''} ${p.role?'• '+esc(p.role):''}</p><p class="hp-lead-text">${esc(p.summary)}</p><div>${tags(p.tags)}</div>${contentHtml}<div class="hp-section"><a class="hp-btn" href="portfolio.html">Back to Portfolio</a></div></main><aside class="hp-project-sidebar"><div class="hp-side-panel"><h3>Project Details</h3><div class="hp-side-row"><span>Year</span><strong>${esc(p.year||'Project')}</strong></div><div class="hp-side-row"><span>Category</span><strong>${esc(p.category||'Project')}</strong></div><div class="hp-side-row"><span>Role</span><strong>${esc(p.role||'Developer')}</strong></div><div class="hp-side-row"><span>Status</span><strong>${esc(p.status||'Completed')}</strong></div>${p.tools?`<div class="hp-side-row hp-tools"><span>Tools</span><strong>${esc(p.tools)}</strong></div>`:''}${live?`<a class="hp-btn hp-btn-fill hp-doc-btn" href="${esc(live)}" target="_blank" rel="noopener">Open Live Project</a>`:''}${source?`<a class="hp-btn hp-doc-btn" href="${esc(source)}" target="_blank" rel="noopener">View Source / GitHub</a>`:''}${doc?`<a class="hp-btn hp-btn-fill hp-doc-btn" href="${esc(doc)}" download>Download Documentation</a>`:''}${fileDownload&&fileDownload!==doc?`<a class="hp-btn hp-doc-btn" href="${esc(fileDownload)}" download>Download Project File</a>`:''}</div></aside></div>`;
     ensureFooter();
   }
   async function renderBlogs(){const el=document.querySelector('[data-blogs]'); if(el){ el.innerHTML=(await get('blogs')).map(cardBlog).join('')||'<div class="hp-alert">No blogs found.</div>'; ensureFooter(); }}
-  async function renderBlog(){const el=document.querySelector('[data-blog-detail]'); if(!el)return; const slug=getParam('slug'); const list=await get('blogs'); const b=list.find(x=>(x.slug||slugify(x.title))===slug)||list[0]; if(!b){el.innerHTML='<div class="hp-alert">Blog not found.</div>';return} el.innerHTML=`<div class="hp-detail-hero"><img src="${image(b.image)}" alt="${esc(b.title)}"></div><p class="hp-date">${esc(b.category||'Blog')} • ${esc(b.date||'')}</p><h2>${esc(b.title)}</h2><div class="hp-rich-content">${rich(b.content||b.summary||'')}</div><div class="hp-section"><a class="hp-btn" href="blogs.html">Back to Blogs</a></div>`; ensureFooter();}
+  async function renderBlog(){const el=document.querySelector('[data-blog-detail]'); if(!el)return; const slug=getParam('slug'); const list=await get('blogs'); const b=list.find(x=>(x.slug||slugify(x.title))===slug)||list[0]; if(!b){el.innerHTML='<div class="hp-alert">Blog not found.</div>';return} el.innerHTML=`<div class="hp-detail-hero"><img src="${image(b.image)}" alt="${esc(b.title)}" loading="lazy" decoding="async"></div><p class="hp-date">${esc(b.category||'Blog')} • ${esc(b.date||'')}</p><h2>${esc(b.title)}</h2><div class="hp-rich-content">${rich(b.content||b.summary||'')}</div><div class="hp-section"><a class="hp-btn" href="blogs.html">Back to Blogs</a></div>`; ensureFooter();}
   async function renderCerts(){
     const el=document.querySelector('[data-certs]');
     if(el){
-      el.innerHTML=(await get('certs')).map(c=>`<a class="hp-card hp-cert-card" href="cert.html?slug=${esc(c.slug||slugify(c.title))}"><img src="${image(c.image)}" alt="${esc(c.title)}"><h3>${esc(c.title)}</h3><p class="hp-muted">${esc(c.issuer||'')} • ${esc(c.completion_date||'')}</p><p>${esc(c.summary)}</p><span class="hp-card-link">View certificate overview</span></a>`).join('')||'<div class="hp-alert">No certifications found. Use Admin → Seed Missing Demo Data or run database/seed_data.sql.</div>';
+      el.innerHTML=(await get('certs')).map(c=>`<a class="hp-card hp-cert-card" href="cert.html?slug=${esc(c.slug||slugify(c.title))}"><img src="${image(c.image)}" alt="${esc(c.title)}" loading="lazy" decoding="async"><h3>${esc(c.title)}</h3><p class="hp-muted">${esc(c.issuer||'')} • ${esc(c.completion_date||'')}</p><p>${esc(c.summary)}</p><span class="hp-card-link">View certificate overview</span></a>`).join('')||'<div class="hp-alert">No certifications found. Use Admin → Seed Missing Demo Data or run database/seed_data.sql.</div>';
       ensureFooter();
     }
   }
@@ -137,7 +145,7 @@
     const el=document.querySelector('[data-cert-detail]'); if(!el)return;
     const slug=getParam('slug'); const list=await get('certs'); const c=list.find(x=>(x.slug||slugify(x.title))===slug)||list[0];
     if(!c){el.innerHTML='<div class="hp-alert">Certificate not found.</div>';return}
-    el.innerHTML=`<div class="hp-cert-detail"><div class="hp-detail-hero hp-cinematic-frame"><img src="${image(c.image)}" alt="${esc(c.title)}"></div><span class="hp-badge">${esc(c.issuer||'Certification')}</span><h2>${esc(c.title)}</h2><p class="hp-muted">${esc(c.completion_date||'Completed')}</p><div class="hp-case-stack"><div class="hp-case-block"><h3>What I Learnt</h3><div class="hp-rich-content">${rich(c.what_i_learnt||c.summary||'')}</div></div><div class="hp-case-block"><h3>How It Helps Companies</h3><div class="hp-rich-content">${rich(c.company_value||'')}</div></div><div class="hp-case-block"><h3>Practical Use</h3><div class="hp-rich-content">${rich(c.practical_use||'')}</div></div></div><div class="hp-section"><a class="hp-btn" href="certs.html">Back to Certifications</a></div></div>`;
+    el.innerHTML=`<div class="hp-cert-detail"><div class="hp-detail-hero hp-cinematic-frame"><img src="${image(c.image)}" alt="${esc(c.title)}" loading="lazy" decoding="async"></div><span class="hp-badge">${esc(c.issuer||'Certification')}</span><h2>${esc(c.title)}</h2><p class="hp-muted">${esc(c.completion_date||'Completed')}</p><div class="hp-case-stack"><div class="hp-case-block"><h3>What I Learnt</h3><div class="hp-rich-content">${rich(c.what_i_learnt||c.summary||'')}</div></div><div class="hp-case-block"><h3>How It Helps Companies</h3><div class="hp-rich-content">${rich(c.company_value||'')}</div></div><div class="hp-case-block"><h3>Practical Use</h3><div class="hp-rich-content">${rich(c.practical_use||'')}</div></div></div><div class="hp-section"><a class="hp-btn" href="certs.html">Back to Certifications</a></div></div>`;
     ensureFooter();
   }
   async function renderResume(){
