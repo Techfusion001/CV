@@ -1,18 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Muhammad Haider Abbas</title>
-  <meta name="description" content="Professional portfolio of Muhammad Haider Abbas: AI, cybersecurity, web systems, game development, 3D animation and VFX.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portfolio | Haider Abbas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Haider Abbas portfolio system powered by Supabase" />
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="css/normalize.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/system.css" type="text/css">
+  
+  <script src="js/modernizr.custom.js"></script>
 </head>
-<body data-page="portfolio">
-  <div id="app-root"><section class="page-hero"><h1>Loading...</h1></section></div>
+<body class="page">
+  <div class="lm-animated-bg"></div>
+  <div class="preloader"><div class="preloader-animation"><div class="preloader-spinner"></div></div></div>
+  <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
+  <div class="page-scroll">
+    <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+      <header id="site_header" class="header">
+        <div class="header-content clearfix">
+          <div class="text-logo"><a href="index.html"><div class="logo-symbol">H</div><div class="logo-text">Haider <span>Abbas</span></div></a></div>
+          <div class="site-nav mobile-menu-hide"><ul class="leven-classic-menu site-main-menu"><li class="menu-item"><a href="index.html">About Me</a></li>
+<li class="menu-item"><a href="resume.html">Resume</a></li>
+<li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
+<li class="menu-item"><a href="blogs.html">Blogs</a></li>
+<li class="menu-item"><a href="certs.html">Certifications</a></li>
+<li class="menu-item"><a href="contact.html">Contact</a></li></ul></div>
+          <a class="menu-toggle mobile-visible"><i class="fa fa-bars"></i></a>
+        </div>
+      </header>
+      <div id="main" class="site-main"><div id="main-content" class="single-page-content"><div id="primary" class="content-area">
+        <div class="page-title"><h1>Portfolio</h1><div class="page-subtitle"><h4>Projects managed from portfolio CMS</h4></div></div>
+        <div id="content" class="page-content site-content single-post" role="main"><div class="hp-grid-3" data-projects></div></div>
+      </div></div></div>
+    </div>
+  </div>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.shuffle.min.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/validator.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/supabase-config.js"></script>
-  <script src="assets/js/supabase-db.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/supabase-app.js"></script>
+  <script src="js/main.js"></script>
+  
+</body></html>

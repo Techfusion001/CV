@@ -9,5 +9,7 @@
   "cta_media": "assets/videos/cta-background.mp4",
   "page_hero_overlay": "0.50",
   "cta_overlay": "0.50",
-  "home_about_image": "assets/svg/home-about-visual.svg"
+  "home_about_image": "assets/svg/home-about-visual.svg",
+  "hero_name": "Muhammad Haider Abbas",
+  "hero_role": "Game Developer • 2D/3D Animator • VFX Artist • Web & AI Systems Builder"
 }

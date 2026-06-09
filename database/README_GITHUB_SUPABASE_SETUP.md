@@ -1,73 +1,53 @@
-# Haider Portfolio System — GitHub Pages + Supabase Version
+# GitHub Pages + Supabase Publishing Guide
 
-This folder is the converted static version of your PHP/XAMPP portfolio system.
+This package contains two versions:
 
-## What changed
+1. `haider_portfolio_system/` root: your PHP/JSON version for XAMPP/cPanel PHP hosting.
+2. `github-supabase/`: static GitHub Pages version powered by Supabase database.
 
-- PHP pages were converted to `.html` pages.
-- JSON/file writing was replaced by Supabase database calls.
-- Admin login now uses Supabase Auth instead of PHP sessions.
-- Admin CRUD now works from the browser through Supabase RLS policies.
-- Contact form saves messages into the `messages` Supabase table.
-- Image/video uploads from admin go to the public Supabase Storage bucket `portfolio-media`.
-- The website styling, structure, pages and content flow remain the same as the localhost portfolio system.
+GitHub Pages cannot run PHP, so use the `github-supabase` folder for GitHub Pages.
 
-## Folder to publish
+## 1. Create Supabase project
 
-Upload **everything inside this folder** to your GitHub repository root.
+1. Go to Supabase and create a new project.
+2. Open SQL Editor.
+3. Run `database/supabase_schema.sql`.
+4. Run `database/seed_data.sql`.
 
-Do not upload the old PHP files for GitHub Pages. GitHub Pages cannot run PHP.
-
-## Step 1 — Create Supabase database
-
-1. Open Supabase Dashboard.
-2. Create a new project.
-3. Go to SQL Editor.
-4. Run:
-
-```text
-database/supabase_schema.sql
-```
-
-5. Then run:
-
-```text
-database/seed_data.sql
-```
-
-## Step 2 — Create admin user
+## 2. Create admin user
 
 1. Supabase Dashboard > Authentication > Users.
-2. Create a user with your email and password.
-3. Copy the created user's UUID.
-4. Run this in Supabase SQL Editor:
+2. Create your admin user with email/password.
+3. Copy that user's `id`.
+4. Run this SQL:
 
 ```sql
 insert into public.admin_users (user_id, email)
-values ('PASTE-AUTH-USER-ID-HERE', 'your-email@example.com')
-on conflict (user_id) do update set email = excluded.email;
+values ('PASTE-AUTH-USER-ID-HERE', 'your@email.com');
 ```
 
-## Step 3 — Configure frontend Supabase keys
+Do not put your Supabase service role key inside GitHub. Only use the anon/publishable key in browser code.
+
+## 3. Configure static site
 
 Open:
 
 ```text
-assets/js/supabase-config.js
+github-supabase/assets/js/supabase-config.js
 ```
 
-Paste your Project URL and anon/public key:
+Replace:
 
 ```js
 window.PORTFOLIO_SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
 window.PORTFOLIO_SUPABASE_ANON_KEY = "YOUR-SUPABASE-ANON-PUBLIC-KEY";
 ```
 
-Never use the Supabase service_role key in frontend code.
+with your real Supabase project URL and anon key.
 
-## Step 4 — Publish on GitHub Pages
+## 4. Publish on GitHub Pages
 
-From this folder:
+Copy the contents of `github-supabase/` into your GitHub repository root, then run:
 
 ```powershell
 git init
@@ -78,37 +58,38 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
-Then GitHub:
+Then open GitHub:
 
-Settings > Pages > Build and deployment > Deploy from branch > Branch: `main` > Folder: `/root`.
+Settings > Pages > Build and deployment > Deploy from a branch > Branch: `main` > Folder: `/root`.
 
-## Main URLs
-
-```text
-index.html
-about.html
-portfolio.html
-project.html?slug=ml-anomaly-detection-concept-drift
-certifications.html
-resume.html
-blogs.html
-blog.html?slug=technical-creative-portfolio
-contact.html
-admin/login.html
-```
-
-## Admin panel
-
-Open:
+Your site will be live at:
 
 ```text
-/admin/login.html
+https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/
 ```
 
-Login with your Supabase Auth admin user.
+## 5. Admin panel
+
+After publishing, open:
+
+```text
+https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/admin/
+```
+
+Login with the Supabase Auth user you created.
+
+## 6. Media uploads
+
+Use Supabase Storage bucket:
+
+```text
+portfolio-media
+```
+
+Upload images/videos there. Then paste public URLs into admin fields such as image, hero_image, page_hero_media, etc.
 
 ## Notes
 
-- Public pages can load local JSON fallback data while Supabase is not configured, so you can preview the design.
-- Admin and contact saving require Supabase configuration.
-- Keep `database/` in the repo if you want a public setup reference, or remove it after deployment if you prefer.
+- Public visitors can read portfolio data and submit contact messages.
+- Only the admin user listed in `public.admin_users` can edit data.
+- RLS is enabled on all tables.
