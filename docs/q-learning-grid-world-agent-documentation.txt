@@ -1,0 +1,33 @@
+Q-Learning Grid World Agent — Project Documentation
+
+Category: AI / Machine Learning
+Year: 2026
+Role: ML Developer
+Status: Academic Project
+Tools: Python, NumPy, Matplotlib
+
+Summary
+A reinforcement learning coursework project using Q-learning in a 5×5 grid with obstacles and sparse rewards.
+
+Overview
+This project demonstrates reinforcement learning through a grid-world environment where an agent learns to navigate from start to goal using Q-table updates.
+
+Problem
+The agent must learn optimal navigation despite obstacles, sparse rewards and exploration trade-offs.
+
+Solution
+Q-learning with epsilon-greedy exploration is used to compare learning behaviour across different exploration values.
+
+Features
+- 5×5 grid environment
+- Q-table implementation
+- Bellman update rule
+- Epsilon comparison
+- Reward tracking
+- Path optimisation
+
+Outcome
+A clear academic AI project showing practical reinforcement learning understanding.
+
+Future Improvements
+Add visual simulation, animated training steps and comparison charts.

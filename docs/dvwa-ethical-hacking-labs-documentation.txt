@@ -1,0 +1,32 @@
+Cybersecurity DVWA & Ethical Hacking Labs — Project Documentation
+
+Category: Cybersecurity
+Year: 2026
+Role: Security Learner
+Status: Practical Labs
+Tools: DVWA, Burp Suite, OWASP testing workflow
+
+Summary
+Hands-on cybersecurity labs using DVWA, Burp Suite, OWASP concepts and professional reporting practice.
+
+Overview
+This lab project demonstrates practical ethical hacking awareness through controlled vulnerable environments and reporting practice.
+
+Problem
+Security concepts are easier to understand when tested in legal, controlled lab environments.
+
+Solution
+DVWA-style workflows are used to practise vulnerability testing, evidence capture and mitigation thinking.
+
+Features
+- OWASP-style vulnerability testing
+- Burp Suite workflows
+- Evidence screenshots direction
+- Risk explanation
+- Professional report writing
+
+Outcome
+A practical cybersecurity learning portfolio section.
+
+Future Improvements
+Add full write-ups, remediation steps and lab videos.

@@ -1,0 +1,34 @@
+AutoMarketPro Car Marketplace — Project Documentation
+
+Category: Web Systems
+Year: 2026
+Role: Full-Stack Developer
+Status: In Progress
+Tools: PHP, MySQL, Stripe, Admin/User Panels
+
+Summary
+A car-selling marketplace with seller ads, subscriptions, Stripe checkout, image uploads and admin moderation.
+
+Overview
+AutoMarketPro is a car marketplace platform inspired by vehicle listing systems, allowing sellers to post ads and manage subscription-based listings.
+
+Problem
+Car-selling platforms need listing control, payment workflows, admin moderation and clean search/filtering.
+
+Solution
+The system connects seller ad posting with subscription packages, Stripe checkout and admin review tools.
+
+Features
+- Seller ad posting
+- Subscription packages
+- Stripe checkout and webhook direction
+- Image upload
+- Admin moderation
+- User dashboard
+- Featured/boosted listing direction
+
+Outcome
+A monetisable web system with strong commercial potential.
+
+Future Improvements
+Add advanced search, valuations, dealer profiles, finance calculator and analytics.

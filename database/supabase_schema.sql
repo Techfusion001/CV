@@ -307,3 +307,20 @@ where not exists (select 1 from public.settings);
 -- insert into public.admin_users(email) values ('your-email@example.com') on conflict (email) do nothing;
 
 notify pgrst, 'reload schema';
+
+
+-- 2026 Admin link/file upgrade: portfolio project working URLs and downloadable docs/files.
+alter table if exists public.projects add column if not exists live_url text;
+alter table if exists public.projects add column if not exists source_url text;
+alter table if exists public.projects add column if not exists documentation text;
+alter table if exists public.projects add column if not exists download_url text;
+alter table if exists public.certs add column if not exists slug text;
+alter table if exists public.certs add column if not exists category text;
+alter table if exists public.certs add column if not exists credential_url text;
+alter table if exists public.certs add column if not exists what_i_learnt text;
+alter table if exists public.certs add column if not exists company_value text;
+alter table if exists public.certs add column if not exists practical_use text;
+alter table if exists public.skills add column if not exists category text;
+alter table if exists public.experience add column if not exists category text;
+alter table if exists public.education add column if not exists category text;
+notify pgrst, 'reload schema';

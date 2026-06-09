@@ -2,31 +2,37 @@
   {
     "title": "AI / Machine Learning",
     "summary": "Research-focused ML, anomaly detection, concept drift, data preprocessing and model evaluation.",
-    "image": "assets/svg/skill-ai.svg"
+    "image": "assets/svg/skill-ai.svg",
+    "category": "Core Skill"
   },
   {
     "title": "Cybersecurity & Ethical Hacking",
     "summary": "DVWA labs, Burp Suite workflows, OWASP concepts, risk awareness and professional reporting.",
-    "image": "assets/svg/skill-cyber.svg"
+    "image": "assets/svg/skill-cyber.svg",
+    "category": "Core Skill"
   },
   {
     "title": "Web Systems & Backend",
     "summary": "Responsive interfaces, PHP/MySQL systems, admin panels, Stripe flows and reusable data structures.",
-    "image": "assets/svg/skill-web.svg"
+    "image": "assets/svg/skill-web.svg",
+    "category": "Core Skill"
   },
   {
     "title": "Unity Game Development",
     "summary": "FPS prototypes, AI behaviour, mission systems, vehicles, weapons and level design.",
-    "image": "assets/svg/skill-game.svg"
+    "image": "assets/svg/skill-game.svg",
+    "category": "Core Skill"
   },
   {
     "title": "Blender 3D / VFX",
     "summary": "3D assets, animation, cinematic visuals, video editing and presentation-ready creative production.",
-    "image": "assets/svg/skill-vfx.svg"
+    "image": "assets/svg/skill-vfx.svg",
+    "category": "Core Skill"
   },
   {
     "title": "Business & E-commerce",
     "summary": "Shopify stores, product research, digital marketing direction and commercial platform thinking.",
-    "image": "assets/svg/skill-business.svg"
+    "image": "assets/svg/skill-business.svg",
+    "category": "Core Skill"
   }
 ]

@@ -1,0 +1,32 @@
+Coursera Digital Transformation Strategy — Project Documentation
+
+Category: Academic Projects
+Year: 2026
+Role: Research Analyst
+Status: Academic Project
+Tools: Research, Strategy, Presentation, Data analysis
+
+Summary
+A digital transformation strategy analysis for Coursera covering AI, data analytics, cloud and EdTech maturity.
+
+Overview
+This project analyses Coursera as a digital education platform and explores its maturity, platform strategy and use of digital technologies.
+
+Problem
+EdTech platforms must adapt to learner expectations, AI personalisation and scalable infrastructure.
+
+Solution
+The strategy reviews AI, big data, learner analytics, cloud systems and recommendation concepts.
+
+Features
+- Digital maturity review
+- AI recommendation direction
+- Student segmentation concept
+- Cloud and LMS analysis
+- Platform business model review
+
+Outcome
+A professional academic strategy project suitable for demonstrating business and technical analysis.
+
+Future Improvements
+Add interactive strategy dashboard and competitor benchmarking.

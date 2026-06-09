@@ -7,7 +7,8 @@
     "summary": "AI, big data infrastructure, digital transformation and cybersecurity knowledge representation.",
     "type": "Master's Degree",
     "start_year": "",
-    "end_year": "Current"
+    "end_year": "Current",
+    "category": "Master's Degree"
   },
   {
     "slug": "bachelor-information-technology",
@@ -17,6 +18,7 @@
     "summary": "Technical foundation in computing, software concepts, information technology and project-based learning.",
     "type": "Bachelor's Degree",
     "start_year": "",
-    "end_year": "Completed"
+    "end_year": "Completed",
+    "category": "Bachelor's Degree"
   }
 ]

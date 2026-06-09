@@ -5,15 +5,25 @@
     "summary": "Door supervisor training covering first aid, access control, conflict management, venue safety and public-facing security readiness.",
     "icon": "Shield",
     "image": "assets/svg/cert-security.svg",
-    "completion_date": "Completed"
+    "completion_date": "Completed",
+    "slug": "sia-door-supervisor-license",
+    "what_i_learnt": "This licence-linked training builds practical public-facing security awareness: access control, safety checks, incident response, conflict management, emergency awareness and professional conduct. It also shows understanding of working safely in regulated UK security environments where communication and risk judgment matter.",
+    "company_value": "For employers, this supports roles requiring trust, calm customer interaction, premises safety and clear incident reporting. It proves I can operate responsibly around the public, follow instructions, protect people and escalate risks without creating unnecessary conflict.",
+    "practical_use": "Useful in retail, hotels, events, corporate sites and any environment where people, assets and access points must be monitored professionally.",
+    "category": "Certification"
   },
   {
-    "title": "Certified Ethical Hacker \u2014 CEH",
+    "title": "Certified Ethical Hacker — CEH",
     "issuer": "EC-Council",
     "summary": "Ethical hacking methodology, reconnaissance, vulnerability concepts, tools and defensive awareness.",
     "icon": "Terminal",
     "image": "assets/svg/cert-tech.svg",
-    "completion_date": "2023"
+    "completion_date": "2023",
+    "slug": "certified-ethical-hacker-ceh",
+    "what_i_learnt": "CEH strengthened my understanding of the ethical hacking lifecycle: reconnaissance, scanning, vulnerability discovery, system and web application attack concepts, wireless/cloud awareness, cryptography basics, documentation and defensive thinking. The learning is not only about tools; it is about understanding attacker behaviour so weaknesses can be found and fixed responsibly.",
+    "company_value": "Companies benefit from this because it supports secure-development thinking, vulnerability awareness, better testing conversations and stronger risk reporting. It helps bridge the gap between developers, IT teams and security staff when building or reviewing systems.",
+    "practical_use": "Useful for web application security reviews, OWASP-style testing, vulnerability documentation, risk assessment, security lab work and defensive improvement planning.",
+    "category": "Certification"
   },
   {
     "title": "CompTIA Security+ SY0-601",
@@ -21,7 +31,12 @@
     "summary": "Risk management, threats, incident response, architecture, cryptography and security operations.",
     "icon": "Lock",
     "image": "assets/svg/cert-academic.svg",
-    "completion_date": "Completed"
+    "completion_date": "Completed",
+    "slug": "comptia-security-sy0-601",
+    "what_i_learnt": "Security+ develops broad cybersecurity fundamentals across threats, attacks, vulnerabilities, secure architecture, implementation, operations, incident response, governance, risk and compliance. It is a strong foundation for understanding how security controls protect networks, applications, devices and data.",
+    "company_value": "For a company, this shows I understand practical security language and can support safer system design, access control, incident awareness, risk discussions and basic security operations. It is valuable in IT support, junior cybersecurity, cloud, web development and technical analyst roles.",
+    "practical_use": "Useful for secure configuration awareness, incident triage, risk registers, authentication/authorization planning, cloud security discussions and compliance-minded documentation.",
+    "category": "Certification"
   },
   {
     "title": "Cyber Security: Understand Threats and Prevent Attacks",
@@ -29,7 +44,12 @@
     "summary": "Foundational security learning focused on common threats, prevention strategies and secure digital behaviour.",
     "icon": "Alert",
     "image": "assets/svg/cert-security.svg",
-    "completion_date": "Completed"
+    "completion_date": "Completed",
+    "slug": "cyber-security-understand-threats-and-prevent-attacks",
+    "what_i_learnt": "This certification focuses on recognizing common cyber threats, understanding how attackers exploit weak behaviour or weak systems, and applying prevention habits such as strong access control, awareness, updates, backups and safer digital workflows.",
+    "company_value": "It supports company readiness by improving security awareness, reducing avoidable mistakes and helping teams understand why policies, training and basic controls matter.",
+    "practical_use": "Useful for staff awareness, secure daily operations, phishing-risk reduction, policy communication and entry-level cybersecurity support.",
+    "category": "Certification"
   },
   {
     "title": "Introduction to CISM",
@@ -37,7 +57,12 @@
     "summary": "Security governance, risk, information security programs and incident management principles.",
     "icon": "Graph",
     "image": "assets/svg/cert-tech.svg",
-    "completion_date": "Completed"
+    "completion_date": "Completed",
+    "slug": "introduction-to-cism",
+    "what_i_learnt": "This learning introduced the management side of information security: governance, risk ownership, security program design and incident management. It connects technical controls with business needs, leadership priorities and measurable security improvement.",
+    "company_value": "Companies need security decisions that align with business value, not only technical tools. This certificate supports communication with management, risk-based prioritisation, policy thinking and structured security program planning.",
+    "practical_use": "Useful for risk assessments, security reporting, policy review, compliance discussions, incident-management planning and translating technical issues for non-technical stakeholders.",
+    "category": "Certification"
   },
   {
     "title": "Ulster MSc Coursework Portfolio",
@@ -45,6 +70,11 @@
     "summary": "Academic evidence across AI, big data, cloud infrastructure, digital transformation and cybersecurity ontology research.",
     "icon": "Academic",
     "image": "assets/svg/cert-academic.svg",
-    "completion_date": "2026"
+    "completion_date": "2026",
+    "slug": "ulster-msc-coursework-portfolio",
+    "what_i_learnt": "The MSc coursework portfolio brings together AI, big data, cloud infrastructure, digital transformation and cybersecurity research. It shows academic planning, technical investigation, written analysis, project design and evidence-based problem solving.",
+    "company_value": "For employers, this demonstrates postgraduate-level learning, research discipline, documentation quality and the ability to connect modern technologies with practical business and security problems.",
+    "practical_use": "Useful for AI projects, cloud/data analysis, technical research, documentation-heavy roles, solution design and graduate-level software or cybersecurity pathways.",
+    "category": "Certification"
   }
 ]

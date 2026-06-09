@@ -1,0 +1,33 @@
+Jarvis AI Agent Workflow — Project Documentation
+
+Category: AI / Automation
+Year: 2026
+Role: Automation Designer
+Status: Concept / Prototype
+Tools: n8n, Ollama, Prompting, APIs
+
+Summary
+A modular AI assistant workflow concept using n8n-style automation, local models and API actions.
+
+Overview
+Jarvis is a personal assistant concept built around modular AI workflows, automation and action-based tasks.
+
+Problem
+Many daily workflows are repetitive but require context, decision-making and structured tool use.
+
+Solution
+The concept uses agents, prompts, local models and API-style actions to automate productivity tasks.
+
+Features
+- Personal assistant workflow
+- n8n-style automation
+- Ollama/local model direction
+- Prompt modules
+- API action planning
+- Productivity automation
+
+Outcome
+A strong AI automation concept for future development.
+
+Future Improvements
+Build working agent modules for email, calendar, files, research and project management.

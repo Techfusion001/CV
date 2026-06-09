@@ -1,0 +1,33 @@
+Unity FPS Sniper Contracts Prototype — Project Documentation
+
+Category: Game Development
+Year: 2026
+Role: Game Developer
+Status: Prototype
+Tools: Unity, C#, Blender, AI Systems, Vehicle Controller
+
+Summary
+A tactical FPS sniper prototype with AI states, missions, vehicles, weapons, ADS and large terrain design.
+
+Overview
+A sniper contracts-style tactical FPS prototype built in Unity with mission structure, AI behaviour, terrain, vehicles and scoped weapon systems.
+
+Problem
+Tactical shooter prototypes require multiple systems to work together: AI, movement, weapons, mission logic and level design.
+
+Solution
+The project builds modular systems for missions, weapons, vehicles and enemy AI states.
+
+Features
+- Large terrain and mission zones
+- AI idle/patrol/alert/combat states
+- Weapon ADS and scopes
+- Vehicle controller direction
+- Mission objective system
+- Level design with refinery-style environment
+
+Outcome
+A serious game development prototype that demonstrates systems thinking and Unity engineering.
+
+Future Improvements
+Add polished AI, UI, audio, cinematic intro and Steam-ready vertical slice.

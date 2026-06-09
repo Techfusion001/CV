@@ -7,7 +7,8 @@
     "summary": "Security operations, access control, conflict awareness, public-facing safety and incident response.",
     "type": "Security",
     "start_year": "",
-    "end_year": "Current / Recent"
+    "end_year": "Current / Recent",
+    "category": "Security"
   },
   {
     "slug": "night-supervisor-night-porter",
@@ -17,7 +18,8 @@
     "summary": "Night operations, guest support, premises monitoring, emergency handling and shift responsibility.",
     "type": "Operations",
     "start_year": "",
-    "end_year": "Recent"
+    "end_year": "Recent",
+    "category": "Operations"
   },
   {
     "slug": "warehouse-resource-recruiter",
@@ -27,7 +29,8 @@
     "summary": "Candidate communication, scheduling, workforce coordination and operational support.",
     "type": "Recruitment",
     "start_year": "",
-    "end_year": "Previous"
+    "end_year": "Previous",
+    "category": "Recruitment"
   },
   {
     "slug": "cybersecurity-ethical-hacking-projects",
@@ -37,7 +40,8 @@
     "summary": "DVWA, Burp Suite workflows, vulnerability testing, documentation and defensive thinking.",
     "type": "Cybersecurity",
     "start_year": "",
-    "end_year": "Ongoing"
+    "end_year": "Ongoing",
+    "category": "Cybersecurity"
   },
   {
     "slug": "animation-video-editing-instructor",
@@ -47,6 +51,7 @@
     "summary": "Teaching, mentoring, creative production, Blender/VFX guidance and technical delivery.",
     "type": "Creative",
     "start_year": "",
-    "end_year": "Previous"
+    "end_year": "Previous",
+    "category": "Creative"
   }
 ]

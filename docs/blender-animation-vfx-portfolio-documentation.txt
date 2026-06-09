@@ -1,0 +1,33 @@
+Blender Animation & VFX Portfolio — Project Documentation
+
+Category: 3D / VFX / Animation
+Year: 2026
+Role: 3D/VFX Artist
+Status: Creative Portfolio
+Tools: Blender, After Effects, Premiere Pro, Unity assets
+
+Summary
+A creative portfolio area for 2D/3D animation, Blender assets, VFX, video editing and modular game/promo visuals.
+
+Overview
+This creative portfolio section presents Haider’s experience across 2D/3D animation, VFX, video editing and game-ready visual production.
+
+Problem
+Creative technical work needs a polished showcase that connects visual skill with practical production outcomes.
+
+Solution
+The project groups animation, modular assets, VFX and editing work into a professional portfolio format.
+
+Features
+- 2D/3D animation
+- Blender assets
+- VFX compositions
+- Video editing
+- Modular assets
+- Game and promo presentation support
+
+Outcome
+A creative-technical showcase supporting freelance, game and media opportunities.
+
+Future Improvements
+Add showreel video, before/after VFX breakdowns and asset galleries.

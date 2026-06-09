@@ -28,10 +28,14 @@
       ],
       "outcome": "A strong MSc project foundation suitable for research, implementation, evaluation and dissertation writing.",
       "future": "Add dashboard visualisation, live stream simulation, adaptive model retraining and explainable anomaly reports."
-    }
+    },
+    "documentation": "docs/ml-anomaly-detection-concept-drift-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
-    "title": "The Miner\u2019s Spice Restaurant Platform",
+    "title": "The Miner’s Spice Restaurant Platform",
     "slug": "miners-spice-restaurant-platform",
     "category": "Web Systems",
     "status": "Commercial Project",
@@ -59,7 +63,11 @@
       ],
       "outcome": "A practical business system that can be customised and sold to restaurants.",
       "future": "Add payment gateway, kitchen dashboard, order tracking and analytics."
-    }
+    },
+    "documentation": "docs/miners-spice-restaurant-platform-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "SmartCV AI CV Analyzer",
@@ -91,7 +99,11 @@
       ],
       "outcome": "A strong AI SaaS-style project for job-tech and career support.",
       "future": "Add job-description matching, rewrite suggestions, dashboard history and recruiter view."
-    }
+    },
+    "documentation": "docs/smartcv-ai-cv-analyzer-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Q-Learning Grid World Agent",
@@ -101,7 +113,7 @@
     "year": "2026",
     "role": "ML Developer",
     "image": "assets/svg/q-learning.svg",
-    "summary": "A reinforcement learning coursework project using Q-learning in a 5\u00d75 grid with obstacles and sparse rewards.",
+    "summary": "A reinforcement learning project where a Q-learning agent learns optimal movement in a 5×5 grid world with obstacles, sparse rewards and a +5 jump transition.",
     "tags": [
       "RL",
       "Q-Learning",
@@ -114,7 +126,7 @@
       "problem": "The agent must learn optimal navigation despite obstacles, sparse rewards and exploration trade-offs.",
       "solution": "Q-learning with epsilon-greedy exploration is used to compare learning behaviour across different exploration values.",
       "features": [
-        "5\u00d75 grid environment",
+        "5×5 grid environment",
         "Q-table implementation",
         "Bellman update rule",
         "Epsilon comparison",
@@ -123,7 +135,11 @@
       ],
       "outcome": "A clear academic AI project showing practical reinforcement learning understanding.",
       "future": "Add visual simulation, animated training steps and comparison charts."
-    }
+    },
+    "documentation": "docs/q-learning-grid-world-agent-assignment.pdf",
+    "live_url": "",
+    "source_url": "",
+    "download_url": "docs/q-learning-grid-world-agent-assignment.pdf"
   },
   {
     "title": "Coursera Digital Transformation Strategy",
@@ -154,7 +170,11 @@
       ],
       "outcome": "A professional academic strategy project suitable for demonstrating business and technical analysis.",
       "future": "Add interactive strategy dashboard and competitor benchmarking."
-    }
+    },
+    "documentation": "docs/coursera-digital-transformation-strategy-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Cloud-Native Air Pollution & Respiratory Death Analysis",
@@ -186,7 +206,11 @@
       ],
       "outcome": "A strong big data portfolio project connecting cloud infrastructure with real-world health analytics.",
       "future": "Add automated ETL pipeline, Power BI dashboard and predictive modelling."
-    }
+    },
+    "documentation": "docs/cloud-air-pollution-respiratory-analysis-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "PenTest-Ont Cybersecurity Ontology",
@@ -199,18 +223,18 @@
     "summary": "A cybersecurity ontology modelling tools, techniques, vulnerabilities and penetration testing knowledge.",
     "tags": [
       "OWL",
-      "Prot\u00e9g\u00e9",
+      "Protégé",
       "SPARQL",
       "Cybersecurity"
     ],
-    "tools": "OWL, Prot\u00e9g\u00e9, SPARQL, Knowledge Graphs",
+    "tools": "OWL, Protégé, SPARQL, Knowledge Graphs",
     "content": {
       "overview": "PenTest-Ont structures penetration testing knowledge using ontology engineering and semantic technologies.",
       "problem": "Cybersecurity knowledge can become fragmented across tools, techniques and vulnerability categories.",
       "solution": "The ontology models relationships between tools, testing techniques, vulnerabilities and reasoning concepts.",
       "features": [
         "OWL ontology structure",
-        "Prot\u00e9g\u00e9 modelling",
+        "Protégé modelling",
         "SPARQL queries",
         "Knowledge graph concepts",
         "Tools and vulnerability mapping",
@@ -218,7 +242,11 @@
       ],
       "outcome": "A unique cybersecurity research project showing structured knowledge modelling.",
       "future": "Connect ontology to automated security reports and AI assistants."
-    }
+    },
+    "documentation": "docs/pentest-ont-cybersecurity-ontology-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "AutoMarketPro Car Marketplace",
@@ -251,7 +279,11 @@
       ],
       "outcome": "A monetisable web system with strong commercial potential.",
       "future": "Add advanced search, valuations, dealer profiles, finance calculator and analytics."
-    }
+    },
+    "documentation": "docs/automarketpro-car-marketplace-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Unity FPS Sniper Contracts Prototype",
@@ -283,7 +315,11 @@
       ],
       "outcome": "A serious game development prototype that demonstrates systems thinking and Unity engineering.",
       "future": "Add polished AI, UI, audio, cinematic intro and Steam-ready vertical slice."
-    }
+    },
+    "documentation": "docs/unity-fps-sniper-contracts-prototype-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Cybersecurity DVWA & Ethical Hacking Labs",
@@ -314,7 +350,11 @@
       ],
       "outcome": "A practical cybersecurity learning portfolio section.",
       "future": "Add full write-ups, remediation steps and lab videos."
-    }
+    },
+    "documentation": "docs/dvwa-ethical-hacking-labs-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Jarvis AI Agent Workflow",
@@ -346,7 +386,11 @@
       ],
       "outcome": "A strong AI automation concept for future development.",
       "future": "Build working agent modules for email, calendar, files, research and project management."
-    }
+    },
+    "documentation": "docs/jarvis-ai-agent-workflow-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Full-Stack Dating App Prototype",
@@ -378,7 +422,11 @@
       ],
       "outcome": "A useful full-stack learning and product design project.",
       "future": "Add working auth, chat, profile verification and recommendations."
-    }
+    },
+    "documentation": "docs/full-stack-dating-app-prototype-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Blender Animation & VFX Portfolio",
@@ -397,7 +445,7 @@
     ],
     "tools": "Blender, After Effects, Premiere Pro, Unity assets",
     "content": {
-      "overview": "This creative portfolio section presents Haider\u2019s experience across 2D/3D animation, VFX, video editing and game-ready visual production.",
+      "overview": "This creative portfolio section presents Haider’s experience across 2D/3D animation, VFX, video editing and game-ready visual production.",
       "problem": "Creative technical work needs a polished showcase that connects visual skill with practical production outcomes.",
       "solution": "The project groups animation, modular assets, VFX and editing work into a professional portfolio format.",
       "features": [
@@ -410,7 +458,11 @@
       ],
       "outcome": "A creative-technical showcase supporting freelance, game and media opportunities.",
       "future": "Add showreel video, before/after VFX breakdowns and asset galleries."
-    }
+    },
+    "documentation": "docs/blender-animation-vfx-portfolio-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   },
   {
     "title": "Family Haven Shopify Store",
@@ -443,6 +495,10 @@
       ],
       "outcome": "A practical e-commerce business project showing product, marketing and store-building skills.",
       "future": "Add winning product funnel, email automation, reviews and conversion optimisation."
-    }
+    },
+    "documentation": "docs/family-haven-shopify-store-documentation.txt",
+    "live_url": "",
+    "source_url": "",
+    "download_url": ""
   }
 ]

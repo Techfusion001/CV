@@ -307,3 +307,52 @@ where not exists (select 1 from public.settings);
 -- insert into public.admin_users(email) values ('your-email@example.com') on conflict (email) do nothing;
 
 notify pgrst, 'reload schema';
+
+-- 2026 Admin category upgrade
+create table if not exists public.categories (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  slug text unique,
+  type text default 'General',
+  summary text,
+  status text default 'Active',
+  created_at timestamptz default now()
+);
+
+alter table if exists public.categories add column if not exists title text;
+alter table if exists public.categories add column if not exists slug text;
+alter table if exists public.categories add column if not exists type text default 'General';
+alter table if exists public.categories add column if not exists summary text;
+alter table if exists public.categories add column if not exists status text default 'Active';
+alter table if exists public.categories add column if not exists created_at timestamptz default now();
+
+alter table if exists public.certs add column if not exists slug text;
+alter table if exists public.certs add column if not exists category text;
+alter table if exists public.certs add column if not exists credential_url text;
+alter table if exists public.skills add column if not exists category text;
+alter table if exists public.experience add column if not exists category text;
+alter table if exists public.education add column if not exists category text;
+
+alter table public.categories enable row level security;
+drop policy if exists "Public can read categories" on public.categories;
+create policy "Public can read categories" on public.categories for select using (true);
+drop policy if exists "Admins manage categories" on public.categories;
+create policy "Admins manage categories" on public.categories for all using (public.is_portfolio_admin()) with check (public.is_portfolio_admin());
+notify pgrst, 'reload schema';
+
+
+-- 2026 Admin link/file upgrade: portfolio project working URLs and downloadable docs/files.
+alter table if exists public.projects add column if not exists live_url text;
+alter table if exists public.projects add column if not exists source_url text;
+alter table if exists public.projects add column if not exists documentation text;
+alter table if exists public.projects add column if not exists download_url text;
+alter table if exists public.certs add column if not exists slug text;
+alter table if exists public.certs add column if not exists category text;
+alter table if exists public.certs add column if not exists credential_url text;
+alter table if exists public.certs add column if not exists what_i_learnt text;
+alter table if exists public.certs add column if not exists company_value text;
+alter table if exists public.certs add column if not exists practical_use text;
+alter table if exists public.skills add column if not exists category text;
+alter table if exists public.experience add column if not exists category text;
+alter table if exists public.education add column if not exists category text;
+notify pgrst, 'reload schema';

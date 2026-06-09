@@ -1,0 +1,33 @@
+SmartCV AI CV Analyzer — Project Documentation
+
+Category: AI / Machine Learning
+Year: 2026
+Role: Product Builder
+Status: Live / In Progress
+Tools: AI workflows, Web stack, Stripe, Resume parsing
+
+Summary
+An AI-supported CV optimisation workspace with ATS feedback, role-fit analysis and subscription logic.
+
+Overview
+SmartCV AI is a CV optimisation concept/platform focused on helping candidates improve their CVs through ATS scoring, keyword alignment and improvement suggestions.
+
+Problem
+Many job seekers submit CVs that are not aligned with job descriptions or ATS keyword patterns.
+
+Solution
+The system analyses CV content, compares it with role requirements and provides structured suggestions for improvement.
+
+Features
+- CV upload workflow
+- ATS score direction
+- Keyword extraction
+- Missing keyword detection
+- Role-fit feedback
+- Subscription-ready product logic
+
+Outcome
+A strong AI SaaS-style project for job-tech and career support.
+
+Future Improvements
+Add job-description matching, rewrite suggestions, dashboard history and recruiter view.

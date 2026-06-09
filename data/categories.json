@@ -1,0 +1,149 @@
+[
+  {
+    "title": "3D / VFX / Animation",
+    "slug": "portfolio-3d-vfx-animation",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "AI / Automation",
+    "slug": "portfolio-ai-automation",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "AI / Machine Learning",
+    "slug": "portfolio-ai-machine-learning",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Academic Projects",
+    "slug": "portfolio-academic-projects",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Cybersecurity",
+    "slug": "portfolio-cybersecurity",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Data / Cloud",
+    "slug": "portfolio-data-cloud",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "E-commerce / Business",
+    "slug": "portfolio-e-commerce-business",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Game Development",
+    "slug": "portfolio-game-development",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Web Systems",
+    "slug": "portfolio-web-systems",
+    "type": "Portfolio",
+    "summary": "Used for filtering and grouping portfolio case studies.",
+    "status": "Active"
+  },
+  {
+    "title": "Career",
+    "slug": "blog-career",
+    "type": "Blog",
+    "summary": "Used for blog article grouping.",
+    "status": "Active"
+  },
+  {
+    "title": "Personal Brand",
+    "slug": "blog-personal-brand",
+    "type": "Blog",
+    "summary": "Used for blog article grouping.",
+    "status": "Active"
+  },
+  {
+    "title": "Portfolio",
+    "slug": "blog-portfolio",
+    "type": "Blog",
+    "summary": "Used for blog article grouping.",
+    "status": "Active"
+  },
+  {
+    "title": "Certification",
+    "slug": "certification-certification",
+    "type": "Certification",
+    "summary": "Used for certificate profile and evidence grouping.",
+    "status": "Active"
+  },
+  {
+    "title": "Core Skill",
+    "slug": "skill-core-skill",
+    "type": "Skill",
+    "summary": "Used for homepage and skill card grouping.",
+    "status": "Active"
+  },
+  {
+    "title": "Creative",
+    "slug": "experience-creative",
+    "type": "Experience",
+    "summary": "Used for resume experience dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Cybersecurity",
+    "slug": "experience-cybersecurity",
+    "type": "Experience",
+    "summary": "Used for resume experience dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Operations",
+    "slug": "experience-operations",
+    "type": "Experience",
+    "summary": "Used for resume experience dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Recruitment",
+    "slug": "experience-recruitment",
+    "type": "Experience",
+    "summary": "Used for resume experience dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Security",
+    "slug": "experience-security",
+    "type": "Experience",
+    "summary": "Used for resume experience dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Bachelor's Degree",
+    "slug": "education-bachelor-s-degree",
+    "type": "Education",
+    "summary": "Used for resume education dropdowns.",
+    "status": "Active"
+  },
+  {
+    "title": "Master's Degree",
+    "slug": "education-master-s-degree",
+    "type": "Education",
+    "summary": "Used for resume education dropdowns.",
+    "status": "Active"
+  }
+]

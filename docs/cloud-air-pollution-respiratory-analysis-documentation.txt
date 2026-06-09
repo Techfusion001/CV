@@ -1,0 +1,33 @@
+Cloud-Native Air Pollution & Respiratory Death Analysis — Project Documentation
+
+Category: Data / Cloud
+Year: 2026
+Role: Data Engineer
+Status: Academic Project
+Tools: Azure Data Lake Gen2, Synapse Spark, PySpark, Plotly
+
+Summary
+A cloud data project analysing average PM2.5 pollution and respiratory deaths using Azure and PySpark.
+
+Overview
+This project studies the relationship between PM2.5 pollution and respiratory deaths using cloud-native data engineering and analytics workflows.
+
+Problem
+Environmental and health datasets need scalable processing before meaningful insights can be extracted.
+
+Solution
+Raw CSV data is ingested, transformed with Spark, stored as Parquet and analysed through country-level aggregation and visualisation.
+
+Features
+- Azure Data Lake ingestion
+- Synapse Spark transformations
+- PySpark cleaning and aggregation
+- Parquet storage
+- Plotly visual analytics
+- Geospatial and correlation insight
+
+Outcome
+A strong big data portfolio project connecting cloud infrastructure with real-world health analytics.
+
+Future Improvements
+Add automated ETL pipeline, Power BI dashboard and predictive modelling.

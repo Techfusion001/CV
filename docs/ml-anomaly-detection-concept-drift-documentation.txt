@@ -1,0 +1,32 @@
+ML-Based Anomaly Detection with Concept Drift — Project Documentation
+
+Category: AI / Machine Learning
+Year: 2026
+Role: Researcher & Developer
+Status: Academic Research
+Tools: Python, Scikit-learn, River, Pandas, Matplotlib
+
+Summary
+A streaming machine learning research project focused on detecting anomalies when behaviour changes over time.
+
+Overview
+This MSc research direction explores how anomaly detection systems can stay accurate when incoming data patterns shift over time. Traditional static models often lose performance when real-world behaviour changes, so this project studies concept drift-aware detection and evaluation.
+
+Problem
+Static anomaly detectors can become unreliable when the underlying data distribution changes. In security, finance, infrastructure and IoT systems, this can lead to missed threats or excessive false alarms.
+
+Solution
+The project uses streaming data preparation, model training, drift monitoring and comparative evaluation to identify when models need adaptation.
+
+Features
+- Dataset preparation for streaming-style analysis
+- Baseline anomaly detection model
+- Concept drift monitoring workflow
+- Evaluation using precision, recall and false alarm behaviour
+- Research-backed implementation roadmap
+
+Outcome
+A strong MSc project foundation suitable for research, implementation, evaluation and dissertation writing.
+
+Future Improvements
+Add dashboard visualisation, live stream simulation, adaptive model retraining and explainable anomaly reports.

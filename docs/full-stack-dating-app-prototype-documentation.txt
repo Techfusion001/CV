@@ -1,0 +1,33 @@
+Full-Stack Dating App Prototype — Project Documentation
+
+Category: Web Systems
+Year: 2026
+Role: Full-Stack Developer
+Status: Prototype
+Tools: React, Node.js, Prisma, PostgreSQL
+
+Summary
+A full-stack app prototype with authentication direction, profile flow, matching concept and database schema planning.
+
+Overview
+A product-style dating app prototype exploring full-stack structure, user profiles, authentication and matching workflows.
+
+Problem
+Modern dating apps require secure authentication, clean data modelling and smooth profile/matching flows.
+
+Solution
+The prototype plans frontend, backend, Prisma schema and PostgreSQL database structure.
+
+Features
+- Frontend/backend architecture
+- Prisma schema direction
+- PostgreSQL setup
+- Authentication planning
+- Profile flow
+- Matching concept
+
+Outcome
+A useful full-stack learning and product design project.
+
+Future Improvements
+Add working auth, chat, profile verification and recommendations.

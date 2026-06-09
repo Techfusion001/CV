@@ -1,0 +1,34 @@
+Family Haven Shopify Store — Project Documentation
+
+Category: E-commerce / Business
+Year: 2026
+Role: Store Builder & Marketer
+Status: Business Project
+Tools: Shopify, CJ Dropshipping, Meta Ads, Pinterest, SEO blogs
+
+Summary
+A UK-focused Shopify pet supplies store with product research, CJ Dropshipping, SEO blogs and paid ad testing.
+
+Overview
+Family Haven is a pet supplies e-commerce store focused on UK customers, product testing and digital marketing.
+
+Problem
+New stores need niche selection, product research, conversion-focused pages and traffic testing.
+
+Solution
+The store uses Shopify, CJ Dropshipping, UK-focused delivery messaging, blogs and paid ad experiments.
+
+Features
+- Shopify store setup
+- Pet supplies niche
+- Product research
+- CJ Dropshipping
+- Meta Ads testing
+- SEO/blog content
+- UK-focused marketing
+
+Outcome
+A practical e-commerce business project showing product, marketing and store-building skills.
+
+Future Improvements
+Add winning product funnel, email automation, reviews and conversion optimisation.

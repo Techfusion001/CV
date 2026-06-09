@@ -1,0 +1,32 @@
+The Miner’s Spice Restaurant Platform — Project Documentation
+
+Category: Web Systems
+Year: 2026
+Role: Full-Stack Developer
+Status: Commercial Project
+Tools: PHP, MySQL, HTML, CSS, JavaScript
+
+Summary
+A restaurant website and management system with menu, ordering, admin and customer-facing pages.
+
+Overview
+A commercial restaurant platform designed to support online menu browsing, customer ordering, bookings, gallery pages and backend management.
+
+Problem
+Small restaurants often rely on generic templates that do not manage menu structure, orders and presentation professionally.
+
+Solution
+The platform connects customer-facing pages with backend/admin logic so the restaurant can manage content and orders in one system.
+
+Features
+- Menu sections and item cards
+- Online ordering flow
+- Booking/contact pages
+- Gallery and customer pages
+- Admin-linked management structure
+
+Outcome
+A practical business system that can be customised and sold to restaurants.
+
+Future Improvements
+Add payment gateway, kitchen dashboard, order tracking and analytics.
